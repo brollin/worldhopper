@@ -1,38 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cosmere
 
-## Getting Started
+## Overview
 
-First, run the development server:
+A tour of the cosmere planets. Rust and ruin!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## To do
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+v0.1
+different planets with shard/vessel
+"world hop" button
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+v0.2
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+LATER
+zoomed out view
+timeline view
+magic systems description
+planet surface view
+community editable content
+cognitive realm view
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Helpful links
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For finding textures:
 
-## Learn More
+- https://www.arroway-textures.ch/
+- https://3dtextures.me/
+- https://www.poliigon.com/
 
-To learn more about Next.js, take a look at the following resources:
+For finding matcaps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- https://github.com/nidorx/matcaps
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+For finding environment maps:
 
-## Deploy on Vercel
+- https://polyhaven.com/
+- HDRI to environment map: https://matheowis.github.io/HDRI-to-CubeMap/
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For particles:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- https://www.kenney.nl/assets/particle-pack
+
+For shaders:
+
+- book of shaders https://thebookofshaders.com/08/
+- curve shapes https://thebookofshaders.com/05/kynd.png
+- easing functions animated https://easings.net/
+- easing functions GLSL https://thebookofshaders.com/edit.php#06/easing.frag
+- HSB to RYB colors https://sighack.com/post/procedural-color-algorithms-hsb-vs-ryb
+- shaders in react three fiber https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
+
+## Destinations
+
+### Rosharan System
+
+https://wob.coppermind.net/events/33/#e2745
+3 inhabited planets, ROSHAR, ASHYN, BRAIZE
+10 gas giants. 10 is significant in the Rosharan System
+3 moons around ROSHAR. 16 is significant in the cosmere
+
+ASHYN
+shard: none
+cataclysm caused by overuse of surges
+surface is highly volcanically active
+small number of inhabitants remain in floating cities and small areas of habitability
+humans fled from here to ROSHAR after cataclysm
+also called Tranquiline Halls
+
+ROSHAR https://coppermind.net/wiki/Roshar
+shard: honor, cultivation
+one large landmass, a pangea built up of crem, almost entirely in southern hemisphere
+no other continents, only islands
+has three moons: SALAS, NOMON, MISHIM all in unstable orbits
+
+BRAIZE
+shard: odium
+cold, barren, inhospitable planet uninhabited except for splinters
+also called Damnation
+
+(asteroid belt)
+
+(the following or gas giants in the outer solar system)
+
+JES
+NAN
+CHACH
+VEV
+PALAH
+SHASH
+BETAB
+KAK
+TANAT
+ISHI
+
+### Scadrial
+
+###
