@@ -22,6 +22,15 @@ cognitive realm view
 
 ## Helpful links
 
+https://docs.pmnd.rs/react-three-fiber/advanced/scaling-performance#instancing
+https://polyhaven.com/hdris
+https://use-gesture.netlify.app/docs/extras/#touch-action
+
+For finding models:
+
+- https://sketchfab.com/
+- https://market.pmnd.rs/
+
 For finding textures:
 
 - https://www.arroway-textures.ch/
