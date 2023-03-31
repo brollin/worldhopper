@@ -6,24 +6,11 @@ A tour of the cosmere planets. Rust and ruin!
 
 ## To do
 
-v0.1
-different planets with shard/vessel
-"world hop" button
-
-v0.2
-
-LATER
-zoomed out view
-timeline view
-magic systems description
-planet surface view
-community editable content
-cognitive realm view
+...
 
 ## Helpful links
 
 https://docs.pmnd.rs/react-three-fiber/advanced/scaling-performance#instancing
-https://polyhaven.com/hdris
 https://use-gesture.netlify.app/docs/extras/#touch-action
 
 For finding models:
@@ -43,8 +30,9 @@ For finding matcaps:
 
 For finding environment maps:
 
-- https://polyhaven.com/
+- https://polyhaven.com/hdris
 - HDRI to environment map: https://matheowis.github.io/HDRI-to-CubeMap/
+- skyboxes: https://opengameart.org/content/space-skyboxes-1
 
 For particles:
 
@@ -58,6 +46,7 @@ For shaders:
 - easing functions GLSL https://thebookofshaders.com/edit.php#06/easing.frag
 - HSB to RYB colors https://sighack.com/post/procedural-color-algorithms-hsb-vs-ryb
 - shaders in react three fiber https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/
+- noise functions https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
 
 ## Destinations
 
@@ -101,7 +90,3 @@ BETAB
 KAK
 TANAT
 ISHI
-
-### Scadrial
-
-###

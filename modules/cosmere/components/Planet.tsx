@@ -6,6 +6,7 @@ import { useRef } from "react";
 
 import { ShardWorld } from "@/modules/cosmere/models/ShardWorld";
 import Glow from "@/modules/cosmere/components/Glow";
+import Clouds from "@/modules/cosmere/components/Clouds";
 
 type PlanetProps = {
   shardWorld: ShardWorld;
@@ -29,7 +30,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
   ]);
 
   useFrame((state, delta) => {
-    sphere.current?.rotateY(delta / 5);
+    sphere.current?.rotateY(delta * 0.05);
   });
 
   return (
@@ -37,7 +38,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
       <Text position={[0, 15, 0]} color={0xffffff}>
         {shardWorld.name}
       </Text>
-      <Sphere ref={sphere} args={[10, 400, 400]}>
+      <Sphere ref={sphere} args={[10, 400, 400]} castShadow>
         <meshStandardMaterial
           attach="material"
           map={planetTexture}
@@ -50,6 +51,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
           aoMap={aoTexture}
         />
       </Sphere>
+      <Clouds shardWorld={shardWorld} />
       <Glow shardWorld={shardWorld} />
     </>
   );

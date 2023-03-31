@@ -10,30 +10,28 @@ import {
 import { useEffect, useMemo, useRef } from "react";
 import { useControls } from "leva";
 
-import vertexShader from "@cosmere/shaders/glow/vertex.glsl";
-import fragmentShader from "@cosmere/shaders/glow/fragment.glsl";
+import vertexShader from "@cosmere/shaders/clouds/vertex.glsl";
+import fragmentShader from "@cosmere/shaders/clouds/fragment.glsl";
 import { ShardWorld } from "@/modules/cosmere/models/ShardWorld";
 
-// inspired by:
-// https://github.com/stemkoski/stemkoski.github.com/blob/master/Three.js/Shader-Glow.html
-// https://stemkoski.github.io/Three.js/Shader-Glow.html
+const initialCloudColor = "#fbfbfb";
+const initialCloudScale = 84;
 
-const initialGlowColor = "#00a6ff";
-const initialC = 1.1;
-const initialP = 5;
-
-type GlowProps = {
+type CloudsProps = {
   shardWorld: ShardWorld;
 };
 
-const Glow = observer(({ shardWorld }: GlowProps) => {
+const Clouds = observer(({ shardWorld }: CloudsProps) => {
   const shaderMaterial = useRef<ShaderMaterial>(null);
-  const glowMesh = useRef<Mesh>(null);
+  const cloudsMesh = useRef<Mesh>(null);
   const { camera } = useThree();
 
   useFrame((state) => {
     const elapsedTime = state.clock.getElapsedTime();
 
+    if (cloudsMesh.current) {
+      cloudsMesh.current.rotation.y = -elapsedTime * 0.01;
+    }
     if (shaderMaterial.current) {
       shaderMaterial.current.uniforms.uTime.value = elapsedTime;
       shaderMaterial.current.uniformsNeedUpdate = true;
@@ -42,36 +40,33 @@ const Glow = observer(({ shardWorld }: GlowProps) => {
 
   const uniforms = useMemo(
     () => ({
-      c: { value: initialC },
-      p: { value: initialP },
-      glowColor: { value: new Color(initialGlowColor) },
+      cloudColor: { value: new Color(initialCloudColor) },
+      cloudScale: { value: initialCloudScale },
       viewVector: { value: camera.position },
       uTime: { value: 0 },
     }),
     [camera.position],
   );
 
-  const { glowColor, c, p } = useControls(
-    "planet glow",
+  const { cloudColor, cloudScale } = useControls(
+    "planet clouds",
     {
-      glowColor: initialGlowColor,
-      c: initialC,
-      p: initialP,
+      cloudColor: initialCloudColor,
+      cloudScale: { value: initialCloudScale, min: 0, max: 100 },
     },
     { collapsed: true },
   );
 
   useEffect(() => {
     if (shaderMaterial.current) {
-      shaderMaterial.current.uniforms.glowColor.value = new Color(glowColor);
-      shaderMaterial.current.uniforms.c.value = c;
-      shaderMaterial.current.uniforms.p.value = p;
+      shaderMaterial.current.uniforms.cloudColor.value = new Color(cloudColor);
+      shaderMaterial.current.uniforms.cloudScale.value = cloudScale;
     }
-  }, [glowColor, c, p]);
+  }, [cloudColor, cloudScale]);
 
   return (
-    <mesh ref={glowMesh}>
-      <sphereGeometry args={[10.75, 32, 32]} />
+    <mesh ref={cloudsMesh}>
+      <sphereGeometry args={[10.7, 32, 32]} />
       <shaderMaterial
         ref={shaderMaterial}
         uniforms={uniforms}
@@ -85,4 +80,4 @@ const Glow = observer(({ shardWorld }: GlowProps) => {
   );
 });
 
-export default Glow;
+export default Clouds;
