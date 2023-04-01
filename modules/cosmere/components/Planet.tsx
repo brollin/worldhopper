@@ -38,7 +38,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
       <Text position={[0, 15, 0]} color={0xffffff}>
         {shardWorld.name}
       </Text>
-      <Sphere ref={sphere} args={[10, 400, 400]} castShadow>
+      <Sphere ref={sphere} args={[10, 32, 32]} castShadow>
         <meshStandardMaterial
           attach="material"
           map={planetTexture}

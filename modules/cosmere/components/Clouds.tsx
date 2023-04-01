@@ -66,7 +66,7 @@ const Clouds = observer(({ shardWorld }: CloudsProps) => {
 
   return (
     <mesh ref={cloudsMesh}>
-      <sphereGeometry args={[10.7, 32, 32]} />
+      <sphereGeometry args={[10.7, 20, 16]} />
       <shaderMaterial
         ref={shaderMaterial}
         uniforms={uniforms}

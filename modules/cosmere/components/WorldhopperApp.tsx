@@ -6,9 +6,9 @@ import { observer } from "mobx-react-lite";
 import theme from "@cosmere/theme";
 import Store from "@cosmere/models/Store";
 import StoreContext from "@cosmere/models/StoreContext";
-import Tour from "@/modules/cosmere/components/Tour";
+import Experience from "@/modules/cosmere/components/Experience";
 
-const Cosmere = observer(() => {
+const Worldhopper = observer(() => {
   const store = useContext(StoreContext);
 
   return (
@@ -18,7 +18,7 @@ const Cosmere = observer(() => {
       </Head>
       {store.initialized ? (
         <>
-          <Tour />
+          <Experience />
           {/* <VStack h="100vh" justifyContent="end">
             <Card size="md" w={370} padding={3} marginBottom={5}>
               testing
@@ -30,12 +30,12 @@ const Cosmere = observer(() => {
   );
 });
 
-const CosmereApp = () => (
+const WorldhopperApp = () => (
   <ChakraProvider theme={theme}>
     <StoreContext.Provider value={new Store()}>
-      <Cosmere />
+      <Worldhopper />
     </StoreContext.Provider>
   </ChakraProvider>
 );
 
-export default CosmereApp;
+export default WorldhopperApp;

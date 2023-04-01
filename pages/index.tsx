@@ -1,3 +1,3 @@
-import CosmereApp from "@/modules/cosmere/components/Cosmere";
+import WorldhopperApp from "@/modules/cosmere/components/WorldhopperApp";
 
-export default CosmereApp;
+export default WorldhopperApp;
