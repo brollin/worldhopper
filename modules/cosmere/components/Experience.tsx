@@ -1,6 +1,5 @@
 import styles from "@/styles/Cosmere.module.css";
 import { observer } from "mobx-react-lite";
-import { Box } from "@chakra-ui/react";
 import { Canvas } from "@react-three/fiber";
 import { useControls } from "leva";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
@@ -14,8 +13,9 @@ import Space from "@/modules/cosmere/components/Space";
 const Experience = observer(() => {
   // const store = useContext(StoreContext);
 
-  const { selectedWorld } = useControls({
+  const { selectedWorld, showPerformance } = useControls({
     selectedWorld: { value: 0, step: 1, min: 0, max: 7 },
+    showPerformance: false,
   });
   const {
     luminanceThreshold,
@@ -38,26 +38,24 @@ const Experience = observer(() => {
   );
 
   return (
-    <Box position="fixed" h="100vh" w="100vw">
-      <Canvas className={styles.canvas} shadows={true}>
-        <Perf position="top-left" />
-        <Planet shardWorld={shardWorlds[selectedWorld]} />
-        <ambientLight intensity={0.1} />
-        <directionalLight args={[0xffffff, 1]} position={[0, 0, 100]} />
-        <Controls />
-        <Space />
-        <EffectComposer>
-          <Bloom
-            intensity={intensity}
-            luminanceThreshold={luminanceThreshold}
-            luminanceSmoothing={luminanceSmoothing}
-            mipmapBlur={mipmapBlur}
-            radius={radius}
-            levels={levels}
-          />
-        </EffectComposer>
-      </Canvas>
-    </Box>
+    <Canvas className={styles.canvas} shadows={true}>
+      {showPerformance ? <Perf position="top-left" /> : null}
+      <Planet shardWorld={shardWorlds[selectedWorld]} />
+      <ambientLight intensity={0.1} />
+      <directionalLight args={[0xffffff, 1]} position={[0, 0, 100]} />
+      <Controls />
+      <Space />
+      <EffectComposer>
+        <Bloom
+          intensity={intensity}
+          luminanceThreshold={luminanceThreshold}
+          luminanceSmoothing={luminanceSmoothing}
+          mipmapBlur={mipmapBlur}
+          radius={radius}
+          levels={levels}
+        />
+      </EffectComposer>
+    </Canvas>
   );
 });
 

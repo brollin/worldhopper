@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import Head from "next/head";
-import { Card, ChakraProvider, VStack } from "@chakra-ui/react";
+import { Box, Card, ChakraProvider, VStack } from "@chakra-ui/react";
 import { observer } from "mobx-react-lite";
+import { Leva } from "leva";
 
 import theme from "@cosmere/theme";
 import Store from "@cosmere/models/Store";
@@ -18,7 +19,10 @@ const Worldhopper = observer(() => {
       </Head>
       {store.initialized ? (
         <>
-          <Experience />
+          <Leva collapsed />
+          <Box position="fixed" h="100vh" w="100vw">
+            <Experience />
+          </Box>
           {/* <VStack h="100vh" justifyContent="end">
             <Card size="md" w={370} padding={3} marginBottom={5}>
               testing
