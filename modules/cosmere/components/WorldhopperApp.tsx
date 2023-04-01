@@ -15,7 +15,7 @@ const Worldhopper = observer(() => {
   return (
     <>
       <Head>
-        <title>Cosmere Tour</title>
+        <title>Worldhopper</title>
       </Head>
       {store.initialized ? (
         <>

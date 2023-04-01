@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { useControls } from "leva";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Perf } from "r3f-perf";
+import { Suspense } from "react";
 
 import Controls from "@/modules/cosmere/components/Controls";
 import Planet from "@/modules/cosmere/components/Planet";
@@ -14,7 +15,7 @@ const Experience = observer(() => {
   // const store = useContext(StoreContext);
 
   const { selectedWorld, showPerformance } = useControls({
-    selectedWorld: { value: 0, step: 1, min: 0, max: 7 },
+    selectedWorld: { value: 0, step: 1, min: 0, max: shardWorlds.length - 1 },
     showPerformance: false,
   });
   const {
@@ -40,11 +41,16 @@ const Experience = observer(() => {
   return (
     <Canvas className={styles.canvas} shadows={true}>
       {showPerformance ? <Perf position="top-left" /> : null}
-      <Planet shardWorld={shardWorlds[selectedWorld]} />
+      <Suspense>
+        <Planet shardWorld={shardWorlds[selectedWorld]} />
+      </Suspense>
       <ambientLight intensity={0.1} />
       <directionalLight args={[0xffffff, 1]} position={[0, 0, 100]} />
       <Controls />
-      <Space />
+      <Suspense>
+        <Space />
+      </Suspense>
+
       <EffectComposer>
         <Bloom
           intensity={intensity}

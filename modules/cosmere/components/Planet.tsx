@@ -35,7 +35,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
 
   return (
     <>
-      <Text position={[0, 15, 0]} color={0xffffff}>
+      <Text position={[0, 15, 0]} fontSize={1.7} color={0xffffff}>
         {shardWorld.name}
       </Text>
       <Sphere ref={sphere} args={[10, 32, 32]} castShadow>
@@ -53,6 +53,28 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
       </Sphere>
       <Clouds shardWorld={shardWorld} />
       <Glow shardWorld={shardWorld} />
+      <group position={[(shardWorld.shards.length - 1) * -5, -15, 0]}>
+        {shardWorld.shards.map((shard, index) => (
+          <Text
+            key={shard}
+            position-x={index * 10}
+            onClick={() => alert(shard)}
+          >
+            {shard}
+          </Text>
+        ))}
+      </group>
+      <group position={[(shardWorld.investitures.length - 1) * -5, -18, 0]}>
+        {shardWorld.investitures.map((investiture, index) => (
+          <Text
+            key={investiture}
+            position-x={index * 10}
+            onClick={() => alert(investiture)}
+          >
+            {investiture}
+          </Text>
+        ))}
+      </group>
     </>
   );
 });

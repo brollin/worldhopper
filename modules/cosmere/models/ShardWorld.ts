@@ -1,4 +1,5 @@
 export class ShardWorld {
+  id: string = "";
   name: string = "";
   series: string = "";
   shards: string[] = [];
