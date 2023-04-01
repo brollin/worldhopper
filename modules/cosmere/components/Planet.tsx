@@ -56,7 +56,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
       <group position={[(shardWorld.shards.length - 1) * -5, -15, 0]}>
         {shardWorld.shards.map((shard, index) => (
           <Text
-            key={shard}
+            key={index}
             position-x={index * 10}
             onClick={() => alert(shard)}
           >
@@ -67,7 +67,7 @@ const Planet = observer(({ shardWorld }: PlanetProps) => {
       <group position={[(shardWorld.investitures.length - 1) * -5, -18, 0]}>
         {shardWorld.investitures.map((investiture, index) => (
           <Text
-            key={investiture}
+            key={index}
             position-x={index * 10}
             onClick={() => alert(investiture)}
           >
