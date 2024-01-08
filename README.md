@@ -6,7 +6,19 @@ A tour of the cosmere planets. Rust and ruin!
 
 ## To do
 
-...
+v0.1
+different planets with shard/vessel
+"world hop" button
+
+v0.2
+
+LATER
+zoomed out view
+timeline view
+magic systems description
+planet surface view
+community editable content
+cognitive realm view
 
 ## Helpful links
 

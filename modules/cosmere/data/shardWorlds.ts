@@ -30,7 +30,7 @@ export const shardWorlds: ShardWorld[] = [
     perpendicularities: ["The Pool"],
     investitures: ["AonDor", "ChayShan", "Dakhor", "Forgery", "Bloodsealing"],
     system: "Selish system",
-    moons: ["None"],
+    moons: ["Oem"],
   },
   {
     id: "nalthis",
